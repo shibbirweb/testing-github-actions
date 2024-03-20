@@ -19,7 +19,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4    
-      - uses: actions/cache@v4
+      - uses: actions/cache@v2
         with:
           path: ./storage/fonts/MonaspaceRadonVarVF[wght,wdth,slnt].ttf
           key: ${{ runner.os }}-font-abc
