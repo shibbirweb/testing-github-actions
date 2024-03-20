@@ -1,0 +1,27 @@
+name: Check code style and run test cases
+
+on:
+  push:
+    branches:
+      - master
+      - uat
+      - dev
+  pull_request:
+    branches:
+      - master
+      - uat
+      - dev
+
+jobs:
+  linting:
+    name: Check code style and run test cases
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4    
+      - uses: actions/cache@v4
+        with:
+          path: storage/fonts/MonaspaceRadonVarVF[wght,wdth,slnt].ttf
+          key: ${{ runner.os }}-font-${{ hashFiles('readme.md') }}
+          restore-keys: |
+            ${{ runner.os }}-font-
