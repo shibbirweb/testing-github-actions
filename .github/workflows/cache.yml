@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4    
       - uses: actions/cache@v4
         with:
-          path: storage/fonts/MonaspaceRadonVarVF[wght,wdth,slnt].ttf
+          path: ./storage/fonts/MonaspaceRadonVarVF[wght,wdth,slnt].ttf
           key: ${{ runner.os }}-font-${{ hashFiles('readme.md') }}
           restore-keys: |
             ${{ runner.os }}-font-
